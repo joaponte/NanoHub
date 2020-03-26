@@ -1,0 +1,5 @@
+<Simulation version="3.6.2">
+   <XMLScript Type="XMLScript">Simulation/Blastocyst2D.xml</XMLScript>
+   <PythonScript Type="PythonScript">Simulation/Blastocyst2D.py</PythonScript>
+   <Resource Type="Python">Simulation/Blastocyst2DSteppables.py</Resource>
+</Simulation>

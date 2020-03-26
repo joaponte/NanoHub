@@ -1,0 +1,70 @@
+<CompuCell3D Revision="20171121" Version="3.7.7">
+   
+   <Potts>
+      
+      <!-- Basic properties of CPM (GGH) algorithm -->
+      <Dimensions x="99" y="99" z="1"/>
+      <Steps>12000</Steps>
+      <Temperature>10.0</Temperature>
+      <NeighborOrder>3</NeighborOrder>
+      <RandomSeed>7896092829745574820</RandomSeed>
+   </Potts>
+   
+   <Plugin Name="CellType">
+      
+      <!-- Listing all cell types in the simulation -->
+      <CellType TypeId="0" TypeName="Medium"/>
+      <CellType TypeId="1" TypeName="Blastomere"/>
+      <CellType Freeze="" TypeId="2" TypeName="Pellucida"/>
+      <CellType TypeId="3" TypeName="InnerCell"/>
+      <CellType TypeId="4" TypeName="Trophoblast"/>
+      <CellType TypeId="5" TypeName="Fluid"/>
+   </Plugin>
+   
+   <Plugin Name="Volume"/>
+   
+   <Plugin Name="Surface"/>
+   
+   <Plugin Name="CenterOfMass">
+      
+      <!-- Module tracking center of mass of each cell -->
+   </Plugin>
+   
+   <Plugin Name="NeighborTracker">
+      
+      <!-- Module tracking neighboring cells of each cell -->
+   </Plugin>
+
+
+   <Plugin Name="BoundaryPixelTracker">
+      
+      <!-- Module tracking boundary pixels of each cell -->
+      <NeighborOrder>1</NeighborOrder>
+   </Plugin>
+   
+   <Plugin Name="Contact">
+      <!-- Specification of adhesion energies -->
+      <Energy Type1="Medium" Type2="Medium">10.0</Energy>
+      <Energy Type1="Medium" Type2="Blastomere">10.0</Energy>
+      <Energy Type1="Medium" Type2="Pellucida">10.0</Energy>
+      <Energy Type1="Medium" Type2="InnerCell">10.0</Energy>
+      <Energy Type1="Medium" Type2="Trophoblast">10.0</Energy>
+      <Energy Type1="Medium" Type2="Fluid">10.0</Energy>
+      <Energy Type1="Fluid" Type2="Fluid">10.0</Energy>
+      <Energy Type1="Blastomere" Type2="Blastomere">28.0</Energy>
+      <Energy Type1="Blastomere" Type2="Pellucida">28.0</Energy>
+      <Energy Type1="Blastomere" Type2="InnerCell">28.0</Energy>
+      <Energy Type1="Blastomere" Type2="Trophoblast">28.0</Energy>
+      <Energy Type1="Blastomere" Type2="Fluid">28.0</Energy>
+      <Energy Type1="Pellucida" Type2="Pellucida">28.0</Energy>
+      <Energy Type1="Pellucida" Type2="InnerCell">28.0</Energy>
+      <Energy Type1="Pellucida" Type2="Trophoblast">28.0</Energy>
+      <Energy Type1="Pellucida" Type2="Fluid">28.0</Energy>
+      <Energy Type1="InnerCell" Type2="InnerCell">28.0</Energy>
+      <Energy Type1="InnerCell" Type2="Trophoblast">28.0</Energy>
+      <Energy Type1="InnerCell" Type2="Fluid">28.0</Energy>
+      <Energy Type1="Trophoblast" Type2="Trophoblast">28.0</Energy>
+      <Energy Type1="Trophoblast" Type2="Fluid">28.0</Energy>
+      <NeighborOrder>3</NeighborOrder>
+   </Plugin>
+</CompuCell3D>
